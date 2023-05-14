@@ -1,0 +1,14 @@
+/**
+*** get toplevel post ID 
+**/
+
+function bw_toplevel_postid() {
+	global $post;
+	if ( 0 == $post->post_parent ) {
+	    $output = get_the_ID();
+	} else {
+    	$id = get_post_ancestors( $post->ID );
+		  $output = end($id);
+	}
+	return $output;
+}

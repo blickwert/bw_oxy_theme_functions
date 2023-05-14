@@ -1,4 +1,8 @@
-function bw_get_existing_thumb_post_id(){
+/**
+ 	get post_id of next existing post with post_thumbnail
+ */
+ 
+ function bw_get_existing_thumb_post_id(){
 	global $post;	
 	$frontpage_id = get_option('page_on_front');
 	$postid = get_the_ID();

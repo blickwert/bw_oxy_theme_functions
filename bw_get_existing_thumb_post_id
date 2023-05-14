@@ -1,0 +1,20 @@
+/*
+helper function for pages to get the post_id with existing thumbnail
+*/
+
+function bw_get_existing_thumb_post_id(){
+	global $post;	
+	$frontpage_id = get_option('page_on_front');
+	$postid = get_the_ID();
+	$parentid = bw_toplevel_postid();
+
+	// if has thumbnail
+	if ( has_post_thumbnail() ) {
+		$output = $postid;
+	} elseif ( has_post_thumbnail($parentid) ) {
+		$output = $parentid;
+	} else {
+		$output = $frontpage_id;	
+	}
+  return $output;
+} 

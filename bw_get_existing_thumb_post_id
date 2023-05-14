@@ -1,6 +1,6 @@
-/**
- 	get post_id of next existing post with post_thumbnail
- */
+/** 
+***  get post_id of next existing post with post_thumbnail
+**/
  
  function bw_get_existing_thumb_post_id(){
 	global $post;	
